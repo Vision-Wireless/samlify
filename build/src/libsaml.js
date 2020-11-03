@@ -297,7 +297,7 @@ var libSaml = function () {
                             !metadataCert.find(function (cert) { return cert.trim() === x509Certificate_1.trim(); })) {
                             // keep this restriction for rolling certificate usage
                             // to make sure the response certificate is one of those specified in metadata
-                            throw new Error('ERROR_UNMATCH_CERTIFICATE_DECLARATION_IN_METADATA');
+                            throw new Error('ERROR_UNMATCH_CERTIFICATE_DECLARATION_IN_METADATA:  ' + metadataCert[0].trim() + ' does not equal ' + x509Certificate_1.trim());
                         }
                         sig.keyInfoProvider = new _this.getKeyInfo(x509Certificate_1);
                     }
